@@ -3,26 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Giselle Moretti — Nutrição de campo</title>
-<meta name="description" content="Consultório de nutrição. Consultas, acompanhamento e plano alimentar personalizado.">
+<title>Raiz — Nutrição clínica</title>
+<meta name="description" content="Consultório de nutrição clínica e funcional. Emagrecimento, acompanhamento e plano alimentar personalizado.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#16221B;
-    --bg-panel:#1E2E24;
-    --paper:#F3EFE3;
-    --paper-line:#E4DCC5;
-    --ink:#EFEAD9;
-    --ink-dim:#B9C0AE;
-    --ink-dark:#1B2A21;
-    --ink-dark-dim:#5B6A5C;
-    --gold:#D4A73C;
-    --berry:#B8636B;
-    --line:rgba(239,234,217,0.14);
-    --radius:2px;
-    --wrap:1160px;
+    --bg:#FBF9F4;
+    --bg-alt:#F2ECDD;
+    --card:#FFFFFF;
+    --ink:#28352A;
+    --ink-dim:#6B7A6C;
+    --sage:#8A9A82;
+    --sage-deep:#5F7259;
+    --gold:#C69A2B;
+    --berry:#A85C64;
+    --deep:#20301F;
+    --line:rgba(40,53,42,0.12);
+    --radius:3px;
+    --wrap:1180px;
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
@@ -31,319 +31,193 @@
     *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
   }
   body{
-    margin:0;
-    background:var(--bg);
-    color:var(--ink);
-    font-family:'Work Sans', sans-serif;
-    font-size:16px;
-    line-height:1.6;
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'Work Sans', sans-serif; font-size:16px; line-height:1.65;
     -webkit-font-smoothing:antialiased;
   }
-  h1,h2,h3,.display{
-    font-family:'Fraunces', serif;
-    font-weight:500;
-    letter-spacing:-0.01em;
-    margin:0;
-  }
-  .mono{
-    font-family:'IBM Plex Mono', monospace;
-    letter-spacing:0.02em;
-  }
+  h1,h2,h3,.display{font-family:'Fraunces', serif; font-weight:500; letter-spacing:-0.01em; margin:0; color:var(--deep);}
+  .mono{font-family:'IBM Plex Mono', monospace; letter-spacing:0.02em;}
   a{color:inherit;}
   img{max-width:100%; display:block;}
   .wrap{max-width:var(--wrap); margin:0 auto; padding:0 28px;}
-  section{padding:120px 0;}
-  @media (max-width:760px){ section{padding:80px 0;} }
+  section{padding:110px 0;}
+  @media (max-width:760px){ section{padding:72px 0;} }
 
-  /* eyebrow / kicker */
   .eyebrow{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:12px;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    color:var(--gold);
-    display:flex;
-    align-items:center;
-    gap:10px;
-    margin-bottom:18px;
+    font-family:'IBM Plex Mono', monospace; font-size:12px; letter-spacing:0.14em;
+    text-transform:uppercase; color:var(--sage-deep);
+    display:flex; align-items:center; gap:10px; margin-bottom:16px;
   }
-  .eyebrow::before{
-    content:"";
-    width:22px; height:1px;
-    background:var(--gold);
-    display:inline-block;
-  }
-  .eyebrow--dark{color:var(--berry);}
+  .eyebrow::before{content:""; width:22px; height:1px; background:var(--gold); display:inline-block;}
 
   /* ---------- Header ---------- */
-  header{
-    position:sticky; top:0; z-index:50;
-    background:rgba(22,34,27,0.86);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);
-  }
-  .nav{
-    display:flex; align-items:center; justify-content:space-between;
-    padding:20px 28px;
-    max-width:var(--wrap); margin:0 auto;
-  }
-  .logo{
-    font-family:'Fraunces', serif;
-    font-size:22px;
-    font-weight:600;
-    display:flex; align-items:baseline; gap:6px;
-  }
-  .logo span{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:11px; color:var(--ink-dim); font-weight:400;
-  }
-  .nav-links{
-    display:flex; gap:36px; list-style:none; margin:0; padding:0;
-    font-size:14px;
-  }
-  .nav-links a{
-    text-decoration:none; color:var(--ink-dim);
-    position:relative; padding-bottom:4px;
-    transition:color .2s ease;
-  }
-  .nav-links a:hover, .nav-links a:focus-visible{color:var(--ink);}
-  .nav-links a::after{
-    content:""; position:absolute; left:0; bottom:0;
-    width:0; height:1px; background:var(--gold);
-    transition:width .25s ease;
-  }
+  header{position:sticky; top:0; z-index:50; background:rgba(251,249,244,0.92); backdrop-filter:blur(10px); border-bottom:1px solid var(--line);}
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:20px 28px; max-width:var(--wrap); margin:0 auto;}
+  .logo{font-family:'Fraunces', serif; font-size:22px; font-weight:600; display:flex; align-items:baseline; gap:8px; color:var(--deep);}
+  .logo span{font-family:'IBM Plex Mono', monospace; font-size:10.5px; color:var(--ink-dim); font-weight:400;}
+  .nav-links{display:flex; gap:34px; list-style:none; margin:0; padding:0; font-size:14px;}
+  .nav-links a{text-decoration:none; color:var(--ink-dim); position:relative; padding-bottom:4px; transition:color .2s ease;}
+  .nav-links a:hover, .nav-links a:focus-visible{color:var(--deep);}
+  .nav-links a::after{content:""; position:absolute; left:0; bottom:0; width:0; height:1px; background:var(--gold); transition:width .25s ease;}
   .nav-links a:hover::after{width:100%;}
   .btn{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:13px;
-    display:inline-flex; align-items:center; gap:8px;
-    padding:11px 20px;
-    border:1px solid var(--gold);
-    color:var(--gold);
-    text-decoration:none;
-    border-radius:var(--radius);
-    transition:background .2s ease, color .2s ease;
-    background:transparent;
-    cursor:pointer;
+    font-family:'IBM Plex Mono', monospace; font-size:13px; display:inline-flex; align-items:center; gap:8px;
+    padding:12px 22px; border:1px solid var(--deep); color:var(--deep); text-decoration:none;
+    border-radius:var(--radius); transition:background .2s ease, color .2s ease; background:transparent; cursor:pointer;
   }
-  .btn:hover, .btn:focus-visible{background:var(--gold); color:var(--ink-dark);}
-  .btn--solid{background:var(--gold); color:var(--ink-dark);}
-  .btn--solid:hover{background:transparent; color:var(--gold);}
+  .btn:hover, .btn:focus-visible{background:var(--deep); color:var(--bg);}
+  .btn--solid{background:var(--deep); color:var(--bg);}
+  .btn--solid:hover{background:transparent; color:var(--deep);}
   .nav-cta{display:none;}
   @media (min-width:761px){ .nav-cta{display:inline-flex;} }
-  .menu-toggle{
-    display:none; background:none; border:none; color:var(--ink);
-    font-size:24px; cursor:pointer; padding:4px;
-  }
+  .menu-toggle{display:none; background:none; border:none; color:var(--deep); font-size:24px; cursor:pointer; padding:4px;}
   @media (max-width:760px){
-    .nav-links{
-      position:fixed; inset:64px 0 auto 0; background:var(--bg-panel);
-      flex-direction:column; padding:24px 28px; gap:20px;
-      border-bottom:1px solid var(--line);
-      transform:translateY(-12px); opacity:0; pointer-events:none;
-      transition:transform .25s ease, opacity .25s ease;
-    }
+    .nav-links{position:fixed; inset:64px 0 auto 0; background:var(--bg); flex-direction:column; padding:24px 28px; gap:20px; border-bottom:1px solid var(--line); transform:translateY(-12px); opacity:0; pointer-events:none; transition:transform .25s ease, opacity .25s ease;}
     .nav-links.open{transform:translateY(0); opacity:1; pointer-events:auto;}
     .menu-toggle{display:block;}
   }
 
   /* ---------- Hero ---------- */
-  .hero{
-    padding-top:90px;
-    display:grid; grid-template-columns:1.1fr 0.9fr; gap:60px; align-items:center;
+  .hero{padding-top:80px; display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:center;}
+  @media (max-width:900px){ .hero{grid-template-columns:1fr; padding-top:56px; gap:48px;} }
+  .hero h1{font-size:clamp(38px,5vw,60px); line-height:1.08;}
+  .hero h1 em{font-style:italic; color:var(--sage-deep);}
+  .hero p.lead{margin-top:24px; max-width:44ch; font-size:17.5px; color:var(--ink-dim);}
+  .hero-actions{margin-top:34px; display:flex; gap:16px; flex-wrap:wrap; align-items:center;}
+  .hero-photos{position:relative; height:420px;}
+  @media (max-width:900px){ .hero-photos{height:340px; margin-top:10px;} }
+  .hero-photo{
+    position:absolute; border-radius:6px; overflow:hidden; background:var(--bg-alt);
+    display:flex; align-items:center; justify-content:center; color:var(--ink-dim);
+    font-family:'IBM Plex Mono', monospace; font-size:12px; text-align:center; padding:16px;
+    box-shadow:0 30px 50px -20px rgba(32,48,31,0.28); border:6px solid var(--card);
   }
-  @media (max-width:900px){ .hero{grid-template-columns:1fr; padding-top:60px;} }
-  .hero h1{
-    font-size:clamp(40px, 5.4vw, 66px);
-    line-height:1.04;
-  }
-  .hero h1 em{
-    font-style:italic; color:var(--gold);
-  }
-  .hero p.lead{
-    margin-top:26px; max-width:46ch;
-    font-size:18px; color:var(--ink-dim);
-  }
-  .hero-actions{
-    margin-top:38px; display:flex; gap:18px; flex-wrap:wrap; align-items:center;
-  }
-  .hero-note{
-    font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--ink-dim);
-  }
-  .plate-wrap{
-    position:relative;
-    display:flex; flex-direction:column; align-items:center; gap:22px;
-  }
-  .plate-caption{
-    font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--ink-dim);
-    text-align:center; max-width:280px;
-  }
-  .legend{
-    display:flex; gap:18px; flex-wrap:wrap; justify-content:center;
-    font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--ink-dim);
-  }
-  .legend li{list-style:none; display:flex; align-items:center; gap:7px;}
-  .legend .dot{width:9px; height:9px; border-radius:50%; display:inline-block;}
+  .hero-photo--a{width:72%; height:88%; top:0; left:0; z-index:2;}
+  .hero-photo--b{width:52%; height:56%; bottom:0; right:0; z-index:3; background:var(--sage); color:#fff; border-color:var(--bg);}
 
-  /* ---------- Sobre (paper panel) ---------- */
-  .panel{
-    background:var(--paper); color:var(--ink-dark);
-    border-radius:6px;
-  }
-  .sobre .wrap{
-    display:grid; grid-template-columns:0.85fr 1.15fr; gap:0;
-    background:var(--paper); border-radius:6px; overflow:hidden;
-    box-shadow:0 30px 60px -20px rgba(0,0,0,0.45);
-  }
-  @media (max-width:860px){ .sobre .wrap{grid-template-columns:1fr;} }
-  .sobre-photo{
-    background:
-      repeating-linear-gradient(135deg, rgba(27,42,33,0.06) 0 2px, transparent 2px 14px),
-      var(--paper-line);
-    min-height:360px;
-    display:flex; align-items:center; justify-content:center;
-    color:var(--ink-dark-dim);
-    font-family:'IBM Plex Mono', monospace; font-size:13px;
-    padding:28px; text-align:center;
-    border-right:1px solid rgba(27,42,33,0.1);
-  }
-  .sobre-body{padding:56px 52px;}
-  @media (max-width:600px){ .sobre-body{padding:36px 26px;} }
-  .sobre-body h2{font-size:clamp(28px,3.4vw,38px); color:var(--ink-dark);}
-  .sobre-body p{color:var(--ink-dark-dim); margin-top:18px; max-width:52ch;}
-  .credentials{
-    margin-top:30px; padding-top:26px; border-top:1px solid rgba(27,42,33,0.14);
-    display:grid; grid-template-columns:1fr 1fr; gap:14px 24px;
-  }
-  .credentials .item{font-size:13px;}
-  .credentials .item .k{
-    display:block; font-family:'IBM Plex Mono', monospace; font-size:11px;
-    text-transform:uppercase; letter-spacing:0.08em; color:var(--berry); margin-bottom:4px;
-  }
+  /* ---------- Intro / "Oi, eu sou" ---------- */
+  .intro .wrap{display:grid; grid-template-columns:0.9fr 1.1fr; gap:64px; align-items:center;}
+  @media (max-width:860px){ .intro .wrap{grid-template-columns:1fr; gap:36px;} }
+  .intro-photo{border-radius:6px; background:var(--bg-alt); min-height:380px; display:flex; align-items:center; justify-content:center; color:var(--ink-dim); font-family:'IBM Plex Mono', monospace; font-size:13px; padding:20px; text-align:center;}
+  .intro-body h2{font-size:clamp(28px,3.4vw,40px);}
+  .intro-body p{color:var(--ink-dim); margin-top:18px; max-width:52ch;}
+  .intro-body .btn{margin-top:26px;}
 
-  /* ---------- Serviços ---------- */
-  .servicos-head{
-    display:flex; justify-content:space-between; align-items:flex-end; gap:24px;
-    flex-wrap:wrap; margin-bottom:50px;
-  }
-  .servicos-head h2{font-size:clamp(30px,4vw,44px); max-width:14ch;}
-  .servicos-head p{color:var(--ink-dim); max-width:34ch;}
-  .service-list{border-top:1px solid var(--line);}
-  .service{
-    display:grid; grid-template-columns:60px 1.3fr 1.7fr auto; gap:28px; align-items:center;
-    padding:30px 0; border-bottom:1px solid var(--line);
-    transition:background .2s ease;
-  }
-  .service:hover{background:rgba(239,234,217,0.03);}
-  @media (max-width:760px){
-    .service{grid-template-columns:40px 1fr; row-gap:10px;}
-    .service .svc-desc, .service .svc-price{grid-column:2 / -1;}
-    .service .svc-icon{grid-row:1 / 3;}
-  }
-  .svc-icon{width:34px; height:34px; color:var(--gold);}
-  .svc-name{font-family:'Fraunces', serif; font-size:22px; font-weight:500;}
-  .svc-desc{color:var(--ink-dim); font-size:14.5px; max-width:44ch;}
-  .svc-price{
-    font-family:'IBM Plex Mono', monospace; font-size:14px; color:var(--ink);
-    white-space:nowrap; text-align:right;
-  }
+  /* ---------- Trajetória ---------- */
+  .trajetoria{background:var(--bg-alt);}
+  .trajetoria .wrap{display:grid; grid-template-columns:1.1fr 0.9fr; gap:64px; align-items:center;}
+  @media (max-width:860px){ .trajetoria .wrap{grid-template-columns:1fr; gap:36px;} }
+  .trajetoria h2{font-size:clamp(28px,3.4vw,40px); max-width:16ch;}
+  .trajetoria p.desc{color:var(--ink-dim); margin-top:18px; max-width:54ch;}
+  .cred-list{list-style:none; margin:30px 0 0; padding:0; display:flex; flex-direction:column; gap:12px;}
+  .cred-list li{display:flex; gap:12px; font-size:14.5px; color:var(--ink);}
+  .cred-list li::before{content:"—"; color:var(--gold); flex-shrink:0;}
+  .trajetoria-photo{border-radius:6px; background:var(--card); min-height:340px; display:flex; align-items:center; justify-content:center; color:var(--ink-dim); font-family:'IBM Plex Mono', monospace; font-size:13px; text-align:center; padding:20px; box-shadow:0 20px 40px -20px rgba(32,48,31,0.2);}
 
-  /* ---------- Caderno de campo ---------- */
-  .caderno{background:var(--bg-panel); border-top:1px solid var(--line); border-bottom:1px solid var(--line);}
-  .caderno-grid{
-    display:grid; grid-template-columns:repeat(3,1fr); gap:2px;
-    background:var(--line); border:1px solid var(--line); margin-top:50px;
-  }
-  @media (max-width:860px){ .caderno-grid{grid-template-columns:1fr;} }
-  .entry{
-    background:var(--bg-panel); padding:36px 32px;
-    display:flex; flex-direction:column; gap:16px;
-  }
-  .entry .date{
-    font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--berry);
-  }
-  .entry h3{font-size:20px; font-weight:500;}
-  .entry p{color:var(--ink-dim); font-size:14.5px; margin:0;}
+  /* ---------- Método ---------- */
+  .metodo-head{max-width:640px;}
+  .metodo-head h2{font-size:clamp(28px,3.6vw,42px);}
+  .metodo-head p{color:var(--ink-dim); margin-top:18px;}
+  .metodo-grid{display:grid; grid-template-columns:repeat(3,1fr) 260px; gap:0; margin-top:56px; align-items:start;}
+  @media (max-width:980px){ .metodo-grid{grid-template-columns:1fr; gap:36px;} }
+  .metodo-steps{display:contents;}
+  @media (max-width:980px){ .metodo-steps{display:grid; gap:36px;} }
+  .step{padding-right:32px; border-right:1px solid var(--line);}
+  .step:last-of-type{border-right:none;}
+  @media (max-width:980px){ .step{border-right:none; padding-right:0; border-bottom:1px solid var(--line); padding-bottom:28px;} }
+  .step .num{font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--gold);}
+  .step h3{font-size:21px; margin-top:14px; font-weight:500;}
+  .step p{color:var(--ink-dim); font-size:14.5px; margin-top:10px;}
+  .metodo-visual{display:flex; align-items:center; justify-content:center; padding-left:20px;}
+  @media (max-width:980px){ .metodo-visual{padding-left:0; justify-content:flex-start;} }
+
+  /* ---------- Especialidades ---------- */
+  .esp-head{display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; margin-bottom:46px;}
+  .esp-head h2{font-size:clamp(28px,3.6vw,42px); max-width:16ch;}
+  .esp-head a{font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--sage-deep); text-decoration:none; white-space:nowrap;}
+  .esp-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:var(--line); border:1px solid var(--line);}
+  @media (max-width:860px){ .esp-grid{grid-template-columns:1fr 1fr;} }
+  @media (max-width:560px){ .esp-grid{grid-template-columns:1fr;} }
+  .esp-card{background:var(--card); padding:36px 30px; display:flex; flex-direction:column; gap:14px; transition:background .2s ease;}
+  .esp-card:hover{background:var(--bg-alt);}
+  .esp-card .ico{width:30px; height:30px; color:var(--sage-deep);}
+  .esp-card h3{font-size:19px; font-weight:500;}
+  .esp-card p{color:var(--ink-dim); font-size:14px; margin:0; flex-grow:1;}
+  .esp-card span{font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--gold);}
+
+  /* ---------- Blog / Notas ---------- */
+  .notas{background:var(--bg-alt);}
+  .notas-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:26px; margin-top:50px;}
+  @media (max-width:860px){ .notas-grid{grid-template-columns:1fr;} }
+  .nota{background:var(--card); border-radius:6px; padding:30px; display:flex; flex-direction:column; gap:14px; box-shadow:0 16px 34px -22px rgba(32,48,31,0.25);}
+  .nota .tag{font-family:'IBM Plex Mono', monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--berry);}
+  .nota h3{font-size:19px; font-weight:500;}
+  .nota p{color:var(--ink-dim); font-size:14px; margin:0;}
+  .nota a{font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--sage-deep); text-decoration:none; margin-top:4px;}
 
   /* ---------- Depoimentos ---------- */
-  .testemunhos{
-    display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:50px;
-  }
+  .testemunhos{display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:50px;}
   @media (max-width:860px){ .testemunhos{grid-template-columns:1fr;} }
-  .card{
-    border:1px solid var(--line); padding:32px; border-radius:4px;
-    display:flex; flex-direction:column; gap:20px; justify-content:space-between;
-  }
+  .card{border:1px solid var(--line); background:var(--card); padding:32px; border-radius:6px; display:flex; flex-direction:column; gap:20px; justify-content:space-between;}
   .card p{margin:0; font-size:15px; color:var(--ink);}
-  .card footer{
-    font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--ink-dim);
-    display:flex; justify-content:space-between; border-top:1px solid var(--line); padding-top:14px;
-  }
+  .card footer{font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--ink-dim); display:flex; justify-content:space-between; border-top:1px solid var(--line); padding-top:14px;}
+
+  /* ---------- Online ---------- */
+  .online .wrap{display:grid; grid-template-columns:0.9fr 1.1fr; gap:60px; align-items:center;}
+  @media (max-width:860px){ .online .wrap{grid-template-columns:1fr; gap:32px;} }
+  .online h2{font-size:clamp(28px,3.4vw,40px);}
+  .online p{color:var(--ink-dim); margin-top:16px; max-width:56ch;}
+  .online .btn{margin-top:24px;}
+
+  /* ---------- CTA final ---------- */
+  .cta-final{background:var(--deep); color:var(--bg); text-align:center;}
+  .cta-final h2{color:var(--bg); font-size:clamp(30px,4.4vw,50px); max-width:16ch; margin:0 auto;}
+  .cta-final p{color:rgba(251,249,244,0.72); margin-top:18px; max-width:44ch; margin-left:auto; margin-right:auto;}
+  .cta-final .btn{margin-top:32px; border-color:var(--bg); color:var(--bg);}
+  .cta-final .btn:hover{background:var(--bg); color:var(--deep);}
 
   /* ---------- Contato ---------- */
-  .contato .wrap{
-    display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:start;
-  }
+  .contato .wrap{display:grid; grid-template-columns:1fr 1fr; gap:70px; align-items:start;}
   @media (max-width:860px){ .contato .wrap{grid-template-columns:1fr; gap:40px;} }
-  .contato h2{font-size:clamp(30px,4vw,44px); max-width:12ch;}
-  .contato-info{margin-top:24px; color:var(--ink-dim); max-width:40ch;}
-  .contato-list{list-style:none; padding:0; margin:34px 0 0; display:flex; flex-direction:column; gap:14px;}
+  .contato h2{font-size:clamp(28px,3.6vw,42px); max-width:12ch;}
+  .contato-info{margin-top:20px; color:var(--ink-dim); max-width:40ch;}
+  .contato-list{list-style:none; padding:0; margin:32px 0 0; display:flex; flex-direction:column; gap:14px;}
   .contato-list li{font-family:'IBM Plex Mono', monospace; font-size:14px; display:flex; gap:12px;}
   .contato-list li span{color:var(--ink-dim);}
-
-  form.receita{
-    background:var(--paper); color:var(--ink-dark); border-radius:6px; padding:44px;
-    box-shadow:0 30px 60px -20px rgba(0,0,0,0.45);
-  }
+  form.receita{background:var(--card); border:1px solid var(--line); border-radius:6px; padding:44px; box-shadow:0 20px 44px -24px rgba(32,48,31,0.22);}
   @media (max-width:500px){ form.receita{padding:30px 24px;} }
-  form.receita .rx-head{
-    display:flex; justify-content:space-between; align-items:baseline;
-    border-bottom:2px solid var(--ink-dark); padding-bottom:14px; margin-bottom:26px;
-  }
+  form.receita .rx-head{display:flex; justify-content:space-between; align-items:baseline; border-bottom:2px solid var(--deep); padding-bottom:14px; margin-bottom:26px;}
   form.receita .rx-head .brand{font-family:'Fraunces',serif; font-size:20px; font-weight:600;}
-  form.receita .rx-head .rx-mono{font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--ink-dark-dim);}
+  form.receita .rx-head .rx-mono{font-family:'IBM Plex Mono', monospace; font-size:11px; color:var(--ink-dim);}
   .field{margin-bottom:20px;}
-  .field label{
-    display:block; font-family:'IBM Plex Mono', monospace; font-size:11px;
-    text-transform:uppercase; letter-spacing:0.08em; color:var(--ink-dark-dim); margin-bottom:8px;
-  }
-  .field input, .field textarea{
-    width:100%; border:none; border-bottom:1px solid rgba(27,42,33,0.3);
-    background:transparent; font-family:'Work Sans', sans-serif; font-size:15px;
-    color:var(--ink-dark); padding:8px 2px; outline:none;
-  }
+  .field label{display:block; font-family:'IBM Plex Mono', monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink-dim); margin-bottom:8px;}
+  .field input, .field textarea{width:100%; border:none; border-bottom:1px solid var(--line); background:transparent; font-family:'Work Sans', sans-serif; font-size:15px; color:var(--ink); padding:8px 2px; outline:none;}
   .field input:focus, .field textarea:focus{border-bottom-color:var(--berry);}
   .field textarea{resize:vertical; min-height:80px;}
-  form.receita .btn{width:100%; justify-content:center; margin-top:6px;
-    border-color:var(--ink-dark); color:var(--ink-dark);}
-  form.receita .btn:hover{background:var(--ink-dark); color:var(--paper);}
-  .form-hint{
-    margin-top:16px; font-size:12px; color:var(--ink-dark-dim); font-family:'IBM Plex Mono', monospace;
-  }
+  form.receita .btn{width:100%; justify-content:center; margin-top:6px;}
+  .form-hint{margin-top:16px; font-size:12px; color:var(--ink-dim); font-family:'IBM Plex Mono', monospace;}
 
   /* ---------- Footer ---------- */
-  footer.site-footer{
-    padding:44px 0; border-top:1px solid var(--line);
-    font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--ink-dim);
-    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
-  }
+  footer.site-footer{background:var(--deep); color:rgba(251,249,244,0.85); padding:70px 0 30px;}
+  .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:50px; padding-bottom:50px; border-bottom:1px solid rgba(251,249,244,0.14);}
+  @media (max-width:760px){ .footer-grid{grid-template-columns:1fr; gap:32px;} }
+  .footer-brand .logo{color:var(--bg);}
+  .footer-brand p{color:rgba(251,249,244,0.62); margin-top:16px; max-width:36ch; font-size:14px;}
+  .footer-social{display:flex; gap:16px; margin-top:20px; font-family:'IBM Plex Mono', monospace; font-size:12px;}
+  .footer-social a{text-decoration:none; color:rgba(251,249,244,0.75);}
+  .footer-col h4{font-family:'IBM Plex Mono', monospace; font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:rgba(251,249,244,0.5); margin-bottom:16px;}
+  .footer-col ul{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:10px; font-size:14px;}
+  .footer-col a{text-decoration:none; color:rgba(251,249,244,0.85);}
+  .footer-bottom{padding-top:26px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-family:'IBM Plex Mono', monospace; font-size:12px; color:rgba(251,249,244,0.5);}
 
-  /* ---------- Reveal on scroll ---------- */
   .reveal{opacity:0; transform:translateY(18px); transition:opacity .6s ease, transform .6s ease;}
   .reveal.is-visible{opacity:1; transform:translateY(0);}
 
-  /* ---------- Plate SVG ---------- */
-  .plate-svg .wedge{
-    opacity:0; transform-origin:100px 100px; transform:scale(.9);
-    transition:opacity .7s ease, transform .7s ease;
-  }
+  .plate-svg .wedge{opacity:0; transform-origin:100px 100px; transform:scale(.9); transition:opacity .7s ease, transform .7s ease;}
   .plate-svg.drawn .wedge{opacity:1; transform:scale(1);}
   .plate-svg .wedge:nth-child(2){transition-delay:.12s;}
   .plate-svg .wedge:nth-child(3){transition-delay:.24s;}
-  .plate-svg .ring{
-    stroke-dasharray:503; stroke-dashoffset:503;
-    transition:stroke-dashoffset 1.1s ease;
-  }
+  .plate-svg .ring{stroke-dasharray:503; stroke-dashoffset:503; transition:stroke-dashoffset 1.1s ease;}
   .plate-svg.drawn .ring{stroke-dashoffset:0;}
 
   :focus-visible{outline:2px solid var(--gold); outline-offset:3px;}
@@ -355,13 +229,13 @@
   <nav class="nav">
     <div class="logo">Raiz<span>NUTRIÇÃO&nbsp;·&nbsp;CRN 00000</span></div>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#sobre">Sobre</a></li>
       <li><a href="#servicos">Serviços</a></li>
-      <li><a href="#caderno">Caderno de campo</a></li>
-      <li><a href="#depoimentos">Depoimentos</a></li>
+      <li><a href="#metodo">Método</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#notas">Blog</a></li>
       <li><a href="#contato">Contato</a></li>
     </ul>
-    <a href="#contato" class="btn btn--solid nav-cta">Agendar consulta</a>
+    <a href="#contato" class="btn btn--solid nav-cta">Agende sua consulta</a>
     <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
   </nav>
 </header>
@@ -370,108 +244,164 @@
   <!-- HERO -->
   <section class="hero wrap">
     <div>
-      <p class="eyebrow">Consultório de nutrição clínica</p>
-      <h1>Comida de verdade,<br><em>lida</em> com atenção.</h1>
-      <p class="lead">Acompanhamento nutricional individualizado, com base em ciência e no seu jeito de comer — sem dietas prontas, sem promessas milagrosas.</p>
+      <p class="eyebrow">Bem-vindo ao seu novo eu</p>
+      <h1>Nutrição com <em>presença</em>,<br>método por trás.</h1>
+      <p class="lead">Acompanhamento nutricional individualizado, unindo escuta real, ciência e um plano que cabe na sua rotina — sem fórmula pronta.</p>
       <div class="hero-actions">
-        <a href="#contato" class="btn btn--solid">Agendar consulta</a>
-        <a href="#servicos" class="btn">Ver serviços</a>
+        <a href="#contato" class="btn btn--solid">Agende sua consulta</a>
+        <a href="#metodo" class="btn">Conhecer o método</a>
       </div>
-      <p class="hero-note" style="margin-top:34px;">Atendimento presencial em Florianópolis/SC e online para todo o Brasil.</p>
     </div>
-
-    <div class="plate-wrap">
-      <svg class="plate-svg" id="plateSvg" viewBox="0 0 200 200" width="280" height="280" role="img" aria-label="Ilustração do prato ideal: metade vegetais e frutas, um quarto proteínas, um quarto carboidratos integrais">
-        <circle class="ring" cx="100" cy="100" r="80" fill="none" stroke="var(--ink)" stroke-width="1.2" opacity="0.5"/>
-        <path class="wedge" d="M100,100 L100,20 A80,80 0 0,1 100,180 Z" fill="var(--gold)" opacity="0.85"/>
-        <path class="wedge" d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="var(--berry)" opacity="0.85"/>
-        <path class="wedge" d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="#7C8F6E" opacity="0.85"/>
-        <circle cx="100" cy="100" r="3" fill="var(--bg)"/>
-      </svg>
-      <ul class="legend">
-        <li><span class="dot" style="background:var(--gold)"></span>50% vegetais e frutas</li>
-        <li><span class="dot" style="background:var(--berry)"></span>25% proteínas</li>
-        <li><span class="dot" style="background:#7C8F6E"></span>25% integrais</li>
-      </ul>
-      <p class="plate-caption">Um jeito simples de visualizar o equilíbrio de cada refeição — ponto de partida, não regra fixa.</p>
+    <div class="hero-photos reveal">
+      <div class="hero-photo hero-photo--a mono">[ foto principal — consultório ou retrato ]</div>
+      <div class="hero-photo hero-photo--b mono">[ foto secundária ]</div>
     </div>
   </section>
 
-  <!-- SOBRE -->
-  <section id="sobre">
-    <div class="wrap sobre reveal">
-      <div class="sobre-photo mono">[ foto da nutricionista ]</div>
-      <div class="sobre-body">
-        <p class="eyebrow eyebrow--dark">Sobre</p>
-        <h2>Nutrição que parte de quem você é, não de uma planilha.</h2>
-        <p>Sou nutricionista com foco em comportamento alimentar e nutrição clínica. Acredito em mudanças possíveis de sustentar — construídas junto, revisadas com frequência, e livres de culpa.</p>
-        <p>Substitua este texto pela sua trajetória, abordagem e o que faz seu atendimento diferente.</p>
-        <div class="credentials">
-          <div class="item"><span class="k">Registro</span>CRN-0 00000</div>
-          <div class="item"><span class="k">Formação</span>Universidade · Ano</div>
-          <div class="item"><span class="k">Especialização</span>Área de foco</div>
-          <div class="item"><span class="k">Atendimento</span>Presencial &amp; online</div>
-        </div>
+  <!-- INTRO -->
+  <section id="sobre" class="intro">
+    <div class="wrap reveal">
+      <div class="intro-photo mono">[ foto — atendimento ]</div>
+      <div class="intro-body">
+        <p class="eyebrow">Oi, eu sou a</p>
+        <h2>Nutricionista [Seu Nome]</h2>
+        <p>Nutricionista por escolha e por convicção. Acredito que todo plano alimentar deveria começar pela escuta — sua rotina, seu histórico, seus desejos e o que realmente é possível sustentar no dia a dia.</p>
+        <p>Substitua este parágrafo pela sua própria apresentação: o que te trouxe até a nutrição e como você conduz o cuidado com cada paciente.</p>
+        <a href="#contato" class="btn">Saiba mais sobre mim</a>
       </div>
     </div>
   </section>
 
-  <!-- SERVIÇOS -->
-  <section id="servicos">
+  <!-- TRAJETÓRIA -->
+  <section class="trajetoria">
+    <div class="wrap reveal">
+      <div>
+        <p class="eyebrow">Trajetória</p>
+        <h2>Formação &amp; carreira</h2>
+        <p class="desc">Formada em Nutrição, com especializações voltadas à prática clínica e ao acompanhamento individualizado — troque pelas suas próprias formações e cursos de referência.</p>
+        <ul class="cred-list">
+          <li>Graduação em Nutrição — Universidade, ano</li>
+          <li>Pós-graduação em Nutrição Clínica — Instituição, ano</li>
+          <li>Especialização em Nutrição Esportiva — Instituição, ano</li>
+          <li>Curso de extensão em Comportamento Alimentar</li>
+          <li>Atualização contínua em Nutrição Funcional</li>
+        </ul>
+        <a href="#contato" class="btn" style="margin-top:28px;">Saiba mais sobre mim</a>
+      </div>
+      <div class="trajetoria-photo mono">[ foto — diploma, consultório ou retrato profissional ]</div>
+    </div>
+  </section>
+
+  <!-- MÉTODO -->
+  <section id="metodo">
     <div class="wrap">
-      <div class="servicos-head reveal">
-        <h2>Como funciona o acompanhamento</h2>
-        <p>Quatro formatos de atendimento — escolha o ponto de partida ou combine ao longo do processo.</p>
+      <div class="metodo-head reveal">
+        <p class="eyebrow">Metodologia própria</p>
+        <h2>O Método Raiz</h2>
+        <p>Um jeito estruturado de conduzir o acompanhamento — do primeiro encontro até a consolidação de novos hábitos, sempre no ritmo de cada paciente.</p>
       </div>
-      <div class="service-list reveal">
-        <div class="service">
-          <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3c-3 3-3 7-3 9a3 3 0 0 0 6 0c0-2 0-6-3-9Z"/><path d="M12 12v9"/></svg>
-          <div class="svc-name">Consulta inicial</div>
-          <div class="svc-desc">Anamnese completa, histórico de saúde, hábitos e objetivos. Ponto de partida do plano.</div>
-          <div class="svc-price">R$ ---- · 60 min</div>
+      <div class="metodo-grid reveal">
+        <div class="metodo-steps">
+          <div class="step">
+            <span class="num mono">01.</span>
+            <h3>Anamnese profunda</h3>
+            <p>Escutamos sua história, rotina, sintomas e objetivos com atenção real, sem pressa.</p>
+          </div>
+          <div class="step">
+            <span class="num mono">02.</span>
+            <h3>Plano individualizado</h3>
+            <p>Um plano alimentar autoral, adequado ao seu paladar, à sua rotina e ao seu momento de vida.</p>
+          </div>
+          <div class="step">
+            <span class="num mono">03.</span>
+            <h3>Acompanhamento contínuo</h3>
+            <p>Consultas de retorno, ajustes no plano e suporte entre as sessões para sustentar o resultado.</p>
+          </div>
         </div>
-        <div class="service">
-          <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M10 4v16"/></svg>
-          <div class="svc-name">Plano alimentar</div>
-          <div class="svc-desc">Cardápio personalizado, com opções de substituição e orientações práticas para o dia a dia.</div>
-          <div class="svc-price">R$ ---- </div>
-        </div>
-        <div class="service">
-          <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 12a8 8 0 1 0 16 0 8 8 0 1 0-16 0Z"/><path d="M12 8v4l3 2"/></svg>
-          <div class="svc-name">Acompanhamento mensal</div>
-          <div class="svc-desc">Consultas de retorno, ajustes de plano e suporte por mensagem entre as sessões.</div>
-          <div class="svc-price">R$ ---- · mensal</div>
-        </div>
-        <div class="service">
-          <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 21v-6M6 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM18 21v-9M18 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>
-          <div class="svc-name">Nutrição esportiva</div>
-          <div class="svc-desc">Ajuste de estratégia alimentar para performance, composição corporal e recuperação.</div>
-          <div class="svc-price">R$ ---- · 60 min</div>
+        <div class="metodo-visual">
+          <svg class="plate-svg" id="plateSvg" viewBox="0 0 200 200" width="180" height="180" role="img" aria-label="Ilustração do prato ideal: metade vegetais e frutas, um quarto proteínas, um quarto carboidratos integrais">
+            <circle class="ring" cx="100" cy="100" r="80" fill="none" stroke="var(--ink)" stroke-width="1.2" opacity="0.35"/>
+            <path class="wedge" d="M100,100 L100,20 A80,80 0 0,1 100,180 Z" fill="var(--gold)" opacity="0.9"/>
+            <path class="wedge" d="M100,100 L100,180 A80,80 0 0,1 20,100 Z" fill="var(--berry)" opacity="0.9"/>
+            <path class="wedge" d="M100,100 L20,100 A80,80 0 0,1 100,20 Z" fill="var(--sage)" opacity="0.9"/>
+            <circle cx="100" cy="100" r="3" fill="var(--bg)"/>
+          </svg>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- CADERNO DE CAMPO -->
-  <section id="caderno" class="caderno">
+  <!-- ESPECIALIDADES -->
+  <section id="servicos" style="background:var(--card);">
     <div class="wrap">
-      <p class="eyebrow reveal">Caderno de campo</p>
-      <h2 class="reveal" style="font-size:clamp(28px,3.6vw,40px); max-width:16ch;">Anotações sobre comida, corpo e rotina</h2>
-      <div class="caderno-grid reveal">
-        <article class="entry">
-          <span class="date">04 · ago · 2026</span>
+      <div class="esp-head reveal">
+        <h2>Atendimento personalizado</h2>
+        <a href="#contato">Ver todos os serviços →</a>
+      </div>
+      <div class="esp-grid reveal">
+        <div class="esp-card">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3c-3 3-3 7-3 9a3 3 0 0 0 6 0c0-2 0-6-3-9Z"/><path d="M12 12v9"/></svg>
+          <h3>Consulta inicial</h3>
+          <p>Anamnese completa, histórico de saúde, hábitos e objetivos.</p>
+          <span>Saber mais</span>
+        </div>
+        <div class="esp-card">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M10 4v16"/></svg>
+          <h3>Plano alimentar</h3>
+          <p>Cardápio personalizado, com opções de substituição e orientações práticas.</p>
+          <span>Saber mais</span>
+        </div>
+        <div class="esp-card">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M4 12a8 8 0 1 0 16 0 8 8 0 1 0-16 0Z"/><path d="M12 8v4l3 2"/></svg>
+          <h3>Acompanhamento mensal</h3>
+          <p>Consultas de retorno, ajustes de plano e suporte entre as sessões.</p>
+          <span>Saber mais</span>
+        </div>
+        <div class="esp-card">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 21v-6M6 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM18 21v-9M18 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/></svg>
+          <h3>Nutrição esportiva</h3>
+          <p>Estratégia alimentar para performance, composição corporal e recuperação.</p>
+          <span>Saber mais</span>
+        </div>
+        <div class="esp-card">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21s-7-4.35-9.5-8.5C.7 8.6 2.6 5 6 5c2 0 3.3 1.1 4 2.2C10.7 6.1 12 5 14 5c3.4 0 5.3 3.6 3.5 7.5C19 16.65 12 21 12 21Z"/></svg>
+          <h3>Nutrição funcional</h3>
+          <p>Investigação da causa raiz de sintomas e equilíbrio do organismo.</p>
+          <span>Saber mais</span>
+        </div>
+        <div class="esp-card">
+          <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/></svg>
+          <h3>Reeducação alimentar</h3>
+          <p>Construção de novos hábitos de forma gradual e sustentável.</p>
+          <span>Saber mais</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOTAS / BLOG -->
+  <section id="notas" class="notas">
+    <div class="wrap">
+      <p class="eyebrow reveal">Central educativa</p>
+      <h2 class="reveal" style="font-size:clamp(28px,3.6vw,40px); max-width:16ch;">Notas de nutrição</h2>
+      <div class="notas-grid reveal">
+        <article class="nota">
+          <span class="tag">Alimentação</span>
           <h3>Fibra não é só "farelo"</h3>
-          <p>Feijão, aveia, frutas com casca e vegetais somam fibra sem precisar recorrer a suplementos. Pequenos ajustes no prato do dia a dia já mudam o jogo.</p>
+          <p>Feijão, aveia, frutas com casca e vegetais somam fibra sem precisar recorrer a suplementos.</p>
+          <a href="#">Ler artigo →</a>
         </article>
-        <article class="entry">
-          <span class="date">18 · jul · 2026</span>
+        <article class="nota">
+          <span class="tag">Saúde intestinal</span>
           <h3>Comer com pressa também é comer</h3>
-          <p>Não é sobre ter tempo livre — é sobre atenção. Algumas estratégias simples para refeições rápidas sem virar "fast food" de sofrimento.</p>
+          <p>Estratégias simples para refeições rápidas sem virar "fast food" de sofrimento.</p>
+          <a href="#">Ler artigo →</a>
         </article>
-        <article class="entry">
-          <span class="date">02 · jul · 2026</span>
+        <article class="nota">
+          <span class="tag">Comportamento</span>
           <h3>Sobre "cortar o açúcar"</h3>
-          <p>Restrição total raramente sustenta. Falamos de contexto, frequência e o que cada pessoa realmente quer da relação com doce.</p>
+          <p>Restrição total raramente sustenta — falamos de contexto, frequência e relação com o doce.</p>
+          <a href="#">Ler artigo →</a>
         </article>
       </div>
     </div>
@@ -499,11 +429,35 @@
     </div>
   </section>
 
+  <!-- ONLINE -->
+  <section class="online" style="background:var(--card);">
+    <div class="wrap reveal">
+      <div>
+        <p class="eyebrow">Onde estiver</p>
+        <h2>Atendimento também online</h2>
+      </div>
+      <div>
+        <p>Além das consultas presenciais, o acompanhamento também acontece online — para quem não consegue ir até o consultório por conta da rotina ou mora em outra cidade.</p>
+        <p>A dinâmica é a mesma: uma conversa completa para entender objetivos, preferências, restrições e rotina, com plano alimentar individual construído a partir disso.</p>
+        <a href="#contato" class="btn btn--solid">Agende sua consulta</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-final">
+    <div class="wrap reveal" style="display:flex; flex-direction:column; align-items:center;">
+      <h2>Pronta para começar a sua jornada?</h2>
+      <p>Agende uma consulta e receba um plano nutricional pensado para o seu momento de vida.</p>
+      <a href="#contato" class="btn">Agende sua consulta</a>
+    </div>
+  </section>
+
   <!-- CONTATO -->
   <section id="contato" class="contato">
     <div class="wrap">
       <div class="reveal">
-        <p class="eyebrow eyebrow--dark">Contato</p>
+        <p class="eyebrow">Contato</p>
         <h2>Vamos conversar sobre o seu caso</h2>
         <p class="contato-info">Preencha os dados ao lado ou fale diretamente pelos canais abaixo. O retorno costuma acontecer em até 1 dia útil.</p>
         <ul class="contato-list">
@@ -513,42 +467,61 @@
           <li><span>Instagram</span> @seuusuario</li>
         </ul>
       </div>
-
       <form class="receita reveal" id="contactForm">
         <div class="rx-head">
           <span class="brand">Raiz</span>
           <span class="rx-mono">FICHA DE CONTATO</span>
         </div>
-        <div class="field">
-          <label for="nome">Nome</label>
-          <input id="nome" name="nome" type="text" required>
-        </div>
-        <div class="field">
-          <label for="email">E-mail</label>
-          <input id="email" name="email" type="email" required>
-        </div>
-        <div class="field">
-          <label for="telefone">Telefone / WhatsApp</label>
-          <input id="telefone" name="telefone" type="tel">
-        </div>
-        <div class="field">
-          <label for="mensagem">O que você procura</label>
-          <textarea id="mensagem" name="mensagem" required></textarea>
-        </div>
-        <button type="submit" class="btn">Enviar mensagem</button>
-        <p class="form-hint">Site estático (GitHub Pages) — este formulário precisa de um serviço como Formspree ou EmailJS para enviar de fato. Veja a nota técnica no README.</p>
+        <div class="field"><label for="nome">Nome</label><input id="nome" name="nome" type="text" required></div>
+        <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" required></div>
+        <div class="field"><label for="telefone">Telefone / WhatsApp</label><input id="telefone" name="telefone" type="tel"></div>
+        <div class="field"><label for="mensagem">O que você procura</label><textarea id="mensagem" name="mensagem" required></textarea></div>
+        <button type="submit" class="btn btn--solid">Enviar mensagem</button>
+        <p class="form-hint">Site estático (GitHub Pages) — este formulário precisa de um serviço como Formspree ou EmailJS para enviar de fato.</p>
       </form>
     </div>
   </section>
 </main>
 
-<footer class="site-footer wrap">
-  <span>© 2026 Raiz Nutrição · CRN-0 00000</span>
-  <span>Feito para viver no GitHub Pages</span>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">Raiz</div>
+        <p>Nutricionista · CRN-0 00000. Nutrição com equilíbrio, ciência e acolhimento — atendimento presencial ou online.</p>
+        <div class="footer-social">
+          <a href="#">Instagram</a>
+          <a href="#">WhatsApp</a>
+          <a href="#">E-mail</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#metodo">Método</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#notas">Blog</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <ul>
+          <li>Florianópolis, SC</li>
+          <li>(48) 00000-0000</li>
+          <li>contato@seudominio.com.br</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Raiz Nutrição — Todos os direitos reservados</span>
+      <span>CRN-0 00000</span>
+    </div>
+  </div>
 </footer>
 
 <script>
-  // Menu mobile
   const toggle = document.getElementById('menuToggle');
   const links = document.getElementById('navLinks');
   toggle.addEventListener('click', () => {
@@ -562,7 +535,6 @@
     toggle.textContent = '☰';
   }));
 
-  // Reveal on scroll
   const revealEls = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver((entries) => {
@@ -573,12 +545,10 @@
     revealEls.forEach(el => el.classList.add('is-visible'));
   }
 
-  // Plate draw-in
   window.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => document.getElementById('plateSvg').classList.add('drawn'), 200);
   });
 
-  // Contact form (static site placeholder — no backend)
   document.getElementById('contactForm').addEventListener('submit', function (e) {
     e.preventDefault();
     const nome = this.nome.value.trim();
